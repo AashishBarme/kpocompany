@@ -1,0 +1,41 @@
+ <!-- bradcam_area  -->
+ <div class="bradcam_area">
+    <div class="bradcam_shap">
+        <img src="assets/img/ilstrator/bradcam_ils.png" alt="">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+
+                    <h3>Careers</h3>
+                    <nav class="brad_cam_lists">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Careers</li>
+                          </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="job_listing_section">
+	<div class="container">
+		<div class="row">
+            <div class="col-md-4 job-list-single"  *ngFor="let career of Model">
+	        	<div class="card">
+				  <h5 class="card-header job-type" *ngFor="let jobtype of career?.JobType">
+                      {{jobtype.name}}
+                  </h5>
+				  <div class="card-body">
+				    <h5 class="card-title">{{career.Title}}</h5>
+				    <p class="card-text" [innerHTML]="safeHtml(career.Excerpt)"></p>
+				    <a routerLink="/careers/{{career.Slug}}" class="btn btn-primary">View More</a>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

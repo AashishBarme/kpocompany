@@ -1,0 +1,28 @@
+@import "src/assets/extrastyle/variable.scss";
+@import "src/assets/extrastyle/mixin.scss";
+.job_listing_section{
+	padding-top:55px;
+	padding-bottom: 55px;
+}
+
+.job-list-single{
+	padding-bottom: 15px;
+}
+
+.job-detail-date{
+	text-align: center;
+    border-right: 2px solid #FF008C;
+}
+
+.job-detail-container{
+	padding-left: 50px;
+}
+
+.job-type span::after{
+	content:",";
+	padding-right:4px;
+}
+
+.job-type span:last-child::after{
+	content: "";
+}

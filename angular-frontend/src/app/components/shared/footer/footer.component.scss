@@ -1,0 +1,38 @@
+@import "src/assets/extrastyle/variable.scss";
+@import "src/assets/extrastyle/mixin.scss";
+.footer{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: #001D38;
+    .footer_top{
+        padding-top: 70px;
+        padding-bottom: 70px;
+        @media #{$mobile_device} {
+            padding-top: 60px;
+            padding-bottom: 30px;
+        }
+    }
+    .copy-right_text{
+        padding-bottom: 30px;
+        background: #002140;
+        .footer_border{
+            // border-top: 1px solid #E8E8E8;
+            padding-bottom: 30px;
+        }
+        .copy_right{
+            font-size: 15px;
+            color: #919191;
+            margin-bottom: 0;
+            font-weight: 400;
+            @media #{$mobile_device} {
+                font-size: 13px;
+            }
+            a{
+                color: #FF008C;
+            }
+        }
+    }
+   
+}

@@ -1,0 +1,57 @@
+ <!-- bradcam_area  -->
+ <div class="bradcam_area">
+    <div class="bradcam_shap">
+        <img src="assets/img/ilstrator/bradcam_ils.png" alt="">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+
+                    <h3>{{Model?.Title}}</h3>
+                    <nav class="brad_cam_lists">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+                            <li class="breadcrumb-item"><a>Services</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{Model?.Title}}</li>
+                          </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /bradcam_area  -->
+<!--================Blog Area =================-->
+<section class="blog_area single-post-area section-padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-8 posts-list">
+             <div class="single-post">
+                <div class="blog_details">
+                   <h2>{{Model?.Title}}
+                   </h2>
+
+                   <p #post_container></p>
+                </div>
+             </div>
+             <div class="navigation-top">
+                <div class="d-sm-flex justify-content-between text-center">           
+                   <ul class="social-icons">
+                      <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                   </ul>
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="blog_right_sidebar">
+              <app-widgets widgetID="page-sidebar"></app-widgets>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ <!--================ Blog Area end =================-->

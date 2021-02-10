@@ -1,0 +1,27 @@
+.job_listing_section{
+	padding-top:55px;
+	padding-bottom: 55px;
+}
+
+.job-listing-single{
+	padding: 25px;
+    border-bottom: 1px solid $gray-color;
+}
+
+.job-detail-date{
+	text-align: center;
+    border-right: 2px solid #FF008C;
+}
+
+.job-detail-container{
+	padding-left: 50px;
+}
+
+.job-type span::after{
+	content:",";
+	padding-right:4px;
+}
+
+.job-type span:last-child::after{
+	content: "";
+}

@@ -1,0 +1,74 @@
+<!-- header-start -->
+    <header>
+      <div class="header-area ">
+          <div id="sticky-header" class="main-header-area">
+              <div class="container-fluid">
+                  <div class="row align-items-center">
+                    <div class=" col-xl-3 col-lg-2">
+                        <a class="logo" href="/" *ngIf="Logo?.LogoUrl == null">
+                            {{Logo?.WebsiteName}}
+                        </a>
+                        <a class="site-logo"  href="/" *ngIf="Logo?.LogoUrl !== null">
+                            <img src="{{Logo?.LogoUrl}}">
+                        </a>
+
+                      </div>
+                      <div class="col-xl-6 col-lg-7">
+                            <div class="main-menu  d-none d-lg-block">
+                              <nav>
+                                  <ul id="navigation">
+                                    <li *ngFor="let menuItem of Menu">
+                                      <a  routerLink="{{menuItem.Link}}">{{menuItem.Title}} </a>
+                                      <ul class="sub-menu" *ngIf="menuItem.Link == ''">
+                                        <li *ngFor="let childMenu of menuItem?.ChildMenu">
+                                            <a routerLink="{{childMenu.Slug}}">{{childMenu.Title}}</a>
+                                        </li>
+                                    </ul>
+                                    </li>
+                                  </ul>
+                              </nav>
+                          </div>
+                      </div>
+                      <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                          <div class="Appointment">
+                              <div class="book_btn d-none d-lg-block">
+                                  <a href="https://topicmanager.kpocompany.com/">Member Login</a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-12">
+                          <div class="mobile_menu d-block d-lg-none">
+                            <div class="slicknav_menu">
+                                <button aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed"  (click)="onClickMenu()">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                
+                                <ul class="slicknav_nav slicknav_hidden" id="mobile_nav" style="display: none;" aria-hidden="true" role="menu">
+                                    <li *ngFor="let menuItem of Menu">
+                                        
+                                        <a *ngIf="menuItem.Link !== ''" routerLink="{{menuItem.Link}}" (click)="onClickMenu()">
+                                            {{menuItem.Title}} 
+                                        </a>
+
+                                        <a *ngIf="menuItem.Link == ''" href="/#" (click)="onShowDropDownMobileMenu()">
+                                            {{menuItem.Title}} 
+                                            <span><i class="fa fa-angle-down"></i></span>
+                                        </a>
+
+                                        <ul class="mobile_sub-menu sub-menu" style="display: none;" id="sub-menu" *ngIf="menuItem.Link == ''">
+                                          <li *ngFor="let childMenu of menuItem?.ChildMenu">
+                                              <a routerLink="{{childMenu.Slug}}" (click)="onClickMenu()">{{childMenu.Title}}</a>
+                                          </li>
+                                      </ul>
+                                      </li>
+                                </ul>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- header-end -->

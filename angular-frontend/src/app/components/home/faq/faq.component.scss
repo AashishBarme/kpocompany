@@ -1,0 +1,166 @@
+@import "src/assets/extrastyle/variable.scss";
+@import "src/assets/extrastyle/mixin.scss";
+#accordion{
+    button{
+        font-size: 16px;
+        color: #0f2137;
+        font-weight: 500;
+        font-weight: 500;
+        @media #{$mobile_device} {
+            font-size: 14px;
+        }
+    }
+    .card{
+        margin-bottom: 15px;
+        border-radius: 0;
+        border-radius: 0 !important;
+        margin-bottom: 30px;
+        .card-header {
+            background-color: transparent;
+            padding: 4px 14px;
+            @media #{$mobile_device} {
+                padding: 4px 0;
+            }
+        }
+        .card-body{
+            font-size: 16px;
+            line-height: 28px;
+            color: #888888;
+            padding: 10px 30px 32px;
+        }
+        .collapse {
+            border-bottom: 1px solid #d7dbe3;
+            &.show{
+                // background: #fff;
+                // -webkit-box-shadow: 0px 30px 50px 0 rgba(77, 193, 220, 0.1);
+                // box-shadow: 0px 30px 50px 0 rgba(77, 193, 220, 0.1);
+                border-bottom: 1px solid transparent;
+            }
+        }
+    }
+    h5{
+        position: relative;
+        z-index: 1;
+        button{
+            i{
+                height: 36px;
+                width: 36px;
+                font-size: 14px;
+                display: inline-block;
+                text-align: center;
+                line-height: 36px;
+                border-radius: 50%;
+                margin-right: 20px;
+                color: #fff;
+                @include transition(.3s);
+                @media #{$mobile_device} {
+                    display: none;
+                }
+            }
+            &.btn.btn-link.collapsed{
+                i{
+                    background: #f4f7f9;
+                    color: #0f2137;
+                    @media #{$mobile_device} {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+    }
+    
+    .btn-link:hover {
+        color: #182028;
+        text-decoration: none;
+    }
+    .btn{
+        text-align: left !important;
+    }
+}
+
+.accordion_area{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    .accordion_thumb{
+        @include border-radius(10px);
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
+    }
+    .faq_ask{
+        h3{
+            font-size: 46px;
+            font-weight: 300;
+            color: #001D38;
+            margin-bottom: 57px;
+            @media #{$mobile_device} {
+                font-size: 38px;
+                margin-bottom: 50px;
+                margin-top: 20px;
+            }
+            @media #{$tablet_device} {
+                font-size: 38px;
+                margin-bottom: 50px;
+                margin-top: 20px;
+            }
+        }
+        #accordion{
+            .card {
+                position: relative;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                min-width: 0;
+                word-wrap: break-word;
+                background-color: #fff;
+                background-clip: border-box;
+                border: none;
+                border-radius: .25rem;
+                border-bottom: 1px solid #E8E8E8;
+            }
+           .card .card-header {
+                background-color: transparent;
+                padding: 4px 14px;
+                border: none;
+            }
+            button {
+                font-size: 15px;
+                color: #001D38 !important;
+                font-weight: 300 !important;
+                span{
+                    @media #{$mobile_device} {
+                        display: none;
+                    }
+                }
+            }
+            .card .card-header {
+                background-color: transparent;
+                padding: 4px 30px;
+            }
+
+            .card .card-body {
+
+                font-size: 15px;
+                line-height: 28px;
+                color: #727272;
+                padding: 10px 30px 32px;
+                font-weight: 400;
+                line-height: 28px;
+            
+            }
+            .btn-link.focus, .btn-link:focus {
+                text-decoration: none;
+                border-color: transparent;
+                box-shadow: none;
+            }
+        }
+    }
+
+
+}

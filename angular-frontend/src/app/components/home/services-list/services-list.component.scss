@@ -1,0 +1,66 @@
+@import "src/assets/extrastyle/variable.scss";
+@import "src/assets/extrastyle/mixin.scss";
+.service_area{
+    padding-top: 200px;
+    padding-bottom: 70px;
+    &.minus_padding{
+        padding-top: 0;
+    }
+    @media #{$mobile_device} {
+        padding-bottom: 30px;
+        padding-top: 80px;
+    }
+    @media #{$tablet_device} {
+        padding-bottom: 50px;
+    }
+
+    .single_service{
+        padding: 48px 35px 45px 35px;
+        @include transition(.3s);
+        margin-bottom: 30px;
+        box-shadow:  0 10px 20px rgba(0, 0, 0, .04);
+        @include border-radius(10px);
+        @media #{$tablet_device}{
+            padding: 30px 20px;
+        }
+        .icon{
+            width: 95px;
+            height: 95px;
+            background: #F5F5FF;
+            @include border-radius(50%);
+            line-height: 95px;
+            margin: auto;
+            img{
+                padding:20px;
+            }
+        }
+        h3{
+            font-size: 22px;
+            font-weight: 400;
+            color:#001D38;
+            margin-top: 24px;
+            padding-bottom: 3px;
+            @media #{$tablet_device} {
+                font-size: 20px;
+            }
+        }
+        p{
+            color: #727272;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 28px;
+            margin-bottom: 26px;
+        }
+    }
+    .col-xl-4:nth-child(2) .single_service .icon{
+        background: #FFF0F8;
+    }
+    .col-xl-4:nth-child(3) .single_service .icon{
+        background: #EFFDF5;
+    }
+}
+
+
+.case_active{
+    width: 100%;
+}
