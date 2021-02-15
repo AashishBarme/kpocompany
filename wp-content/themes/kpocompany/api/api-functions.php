@@ -6,7 +6,9 @@ function ListServices()
 	global $wpdb;
 	$posts = [];
 	$results = $wpdb->get_results(
-		$wpdb->prepare("select * from wp_posts where post_type=%s and post_status=%s order by ID DESC","services","publish")
+		$wpdb->prepare("select * from wp_posts 
+		where post_type=%s and post_status=%s 
+		order by ID DESC","services","publish")
 	);
 
 	foreach($results as $result)
@@ -25,7 +27,10 @@ function GetAboutUsDetails()
 {
 	global $wpdb;
 	$results = $wpdb->get_results(
-		$wpdb->prepare("select * from wp_posts where post_name=%s and post_status=%s", "about-us","publish")
+		$wpdb->prepare("
+			select * from wp_posts where 
+			post_name=%s and post_status=%s"
+			, "about-us","publish")
 	);
 	foreach($results as $result )
 	{
@@ -43,7 +48,9 @@ function ListFaqs()
 	global $wpdb;
 	$posts = [];
 	$results = $wpdb->get_results(
-		$wpdb->prepare("select * from wp_posts where post_type=%s and post_status=%s order by ID ASC","faq","publish")
+		$wpdb->prepare("select * from wp_posts where 
+		post_type=%s and post_status=%s order by ID ASC",
+		"faq","publish")
 	);
 
 	foreach($results as $result)
@@ -96,7 +103,9 @@ function GetPostBySlug($data)
 	$slug = trim($data['slug']);
     $categoryArray = [];
 	$results = $wpdb->get_results(
-		$wpdb->prepare("select * from wp_posts where post_name=%s and post_status=%s", $slug,"publish")
+		$wpdb->prepare("select * from wp_posts 
+			where post_name=%s and post_status=%s",
+			$slug,"publish")
 	);
 	foreach($results as $result )
 	{
@@ -109,7 +118,7 @@ function GetPostBySlug($data)
         $data->ImageUrl = get_the_post_thumbnail_url($result->ID);
         $data->Excerpt = wp_trim_words($result->post_content, 20, '...');
 		$data->Categories = get_the_terms( $result->ID, 'category' ); 
-		$data->MetaTitle = get_post_meta($result->ID, '_yoast_wpseo_title', true);
+		$data->MetaTitle = $result->post_title;
         $data->MetaDescription =  get_post_meta($result->ID, '_yoast_wpseo_metadesc', true);
 
 	}
@@ -121,7 +130,9 @@ function ListPosts()
 	global $wpdb;
 	$posts = [];
 	$results = $wpdb->get_results(
-		$wpdb->prepare("select * from wp_posts where post_type=%s and post_status=%s order by ID DESC","post","publish")
+		$wpdb->prepare("select * from wp_posts 
+		where post_type=%s and post_status=%s 
+		order by ID DESC", "post","publish")
 	);
 
 	foreach($results as $result)
@@ -143,7 +154,9 @@ function GetCareerBySlug($data)
 	global $wpdb;
 	$slug = trim($data['careername']);
 	$results = $wpdb->get_results(
-		$wpdb->prepare("select * from wp_posts where post_name=%s and post_type=%s and post_status=%s", $slug , "career","publish")
+		$wpdb->prepare("select * from wp_posts where 
+		post_name=%s and post_type=%s and post_status=%s",
+		$slug , "career","publish")
 	);
 	foreach($results as $result)
 	{
@@ -153,6 +166,8 @@ function GetCareerBySlug($data)
 		$data->Content = $result->post_content;
 		$data->ModifiedDate = $result->post_modified;
 		$data->Categories = get_the_terms($result->ID, 'job-type');
+		$data->MetaTitle = $result->post_title;
+        $data->MetaDescription =  get_post_meta($result->ID, '_yoast_wpseo_metadesc', true);
 	}
 	return $data; 
 }
@@ -162,7 +177,8 @@ function ListCareers()
 	global $wpdb;
 	$careers = [];
 	$results = $wpdb->get_results(
-		$wpdb->prepare("select * from wp_posts where post_type=%s and post_status=%s order by ID DESC","career","publish")
+		$wpdb->prepare("select * from wp_posts where post_type=%s 
+				and post_status=%s order by ID DESC","career","publish")
 	);
 
 	foreach($results as $result)
@@ -183,7 +199,9 @@ function GetServicesBySlug($data)
 	global $wpdb;
 	$slug = trim($data['servicename']);
 	$results = $wpdb->get_results(
-		$wpdb->prepare("select * from wp_posts where post_name=%s and post_type=%s and post_status=%s", $slug , "services","publish")
+		$wpdb->prepare("select * from wp_posts where post_name=%s 
+						and post_type=%s and post_status=%s", 
+						$slug , "services","publish")
 	);
 	foreach($results as $result)
 	{
@@ -191,6 +209,8 @@ function GetServicesBySlug($data)
 		$data->Title = $result->post_title;
 		$data->Slug = $result->post_name;
 		$data->Content = $result->post_content;
+		$data->MetaTitle = $result->post_title;
+        $data->MetaDescription =  get_post_meta($result->ID, '_yoast_wpseo_metadesc', true);
 	}
 	return $data; 
 }
