@@ -21,6 +21,8 @@ export class ServicesService{
                 serviceModel.Title = data.Title;
                 serviceModel.Slug = data.Slug;
                 serviceModel.Content = data.Content;
+                serviceModel.MetaTitle = data.MetaTitle;
+                serviceModel.MetaDescription = data.MetaDescription;
                 return serviceModel;
             }
            )
