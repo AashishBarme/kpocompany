@@ -234,6 +234,11 @@ function GetCustomizerOptionsDetails()
     $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 	$data->LogoUrl =  $image[0]; 
 
+	$wpseo_titles = get_option('wpseo_titles');
+
+    $data->HomeSeoTitle = $wpseo_titles['title-home-wpseo'];
+    $data->HomeMetaDesc = $wpseo_titles['metadesc-home-wpseo'];
+
 
 	return $data;
 }
