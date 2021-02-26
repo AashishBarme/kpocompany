@@ -19,6 +19,8 @@ export class CustomizerService{
                     const customizerModel = new CustomizerModel;
                     customizerModel.BannerTitle = data.BannerTitle;
                     customizerModel.BannerImage = data.BannerImage;
+                    customizerModel.HomeSeoTitle = data.HomeSeoTitle;
+                    customizerModel.HomeMetaDesc = data.HomeMetaDesc;
                     return customizerModel;
                 }
             )

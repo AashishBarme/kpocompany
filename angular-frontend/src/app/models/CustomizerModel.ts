@@ -10,4 +10,6 @@ export class CustomizerModel{
     JobNumber: string;
     WebsiteName: string;
     LogoUrl: string;
+    HomeSeoTitle:string;
+    HomeMetaDesc:string;
 }
